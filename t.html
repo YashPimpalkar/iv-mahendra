@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEIC Image Viewer</title>
+</head>
+<body>
+    <input type="file" id="file-input" accept="image/*" multiple>
+    <div id="image-container"></div>
+
+    <script>
+        document.getElementById('file-input').addEventListener('change', function(event) {
+            const files = event.target.files;
+            const imageContainer = document.getElementById('image-container');
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+
+                if (file.type && file.type.includes('image')) {
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        imageContainer.appendChild(img);
+                    };
+
+                    reader.readAsDataURL(file);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
