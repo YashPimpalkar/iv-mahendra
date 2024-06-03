@@ -19,3 +19,64 @@ img {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */
     background-color: white; /* White background for images */
 }
+
+
+@media (max-width: 300px) {
+    /* Styles for screens up to 300px wide */
+}
+
+/* Add more media queries for different screen sizes */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Styles for horizontal images */
+.gallery-item.horizontal {
+    background-color: #f9fafb; /* Light gray background */
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Styles for vertical images */
+.gallery-item.vertical {
+    background-color: #eceff1; /* Light blue-gray background */
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Hover effect */
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .gallery-item.horizontal,
+    .gallery-item.vertical {
+        padding: 5px;
+        margin: 5px;
+    }
+}
+
+/* CSS class for rotating images upside down */
+.rotate-upside-down {
+    transform: rotate(180deg);
+}
+
+/* CSS class for rotating images by 90 degrees */
+.rotate-90 {
+    transform: rotate(90deg);
+}

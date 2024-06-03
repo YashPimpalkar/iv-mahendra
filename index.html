@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HEIC Image Gallery</title>
+    <title>Image and Video Gallery</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container" id="image-container">
-        <!-- Images will be dynamically loaded here -->
+    <div class="gallery">
+        <!-- Images -->
+        <img src="Mah-IV (1).jpg" alt="Image 1" class="gallery-item" onclick="openFullscreen(this.src)">
+        <img src="Mah-IV (2).jpg" alt="Image 2" class="gallery-item" onclick="openFullscreen(this.src)">
+        <!-- Videos -->
+        <video class="gallery-item" controls onclick="openFullscreen(this.src)">
+            <source src="Mah-IV (1).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Add more images and videos -->
     </div>
 
     <script src="script.js"></script>
